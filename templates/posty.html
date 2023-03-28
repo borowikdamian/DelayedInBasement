@@ -1,0 +1,30 @@
+<!Doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Page with posts, comments, albums and pictures." />
+        <meta name="keywords" content="posts, comments, albums, pictures" />
+        <title>DelayedInBasement</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('css', filename='css/style.css') }}">
+
+
+    </head>
+    <body>
+        <div id="body">
+            <a href="{{ url_for('index') }}" method="POST">
+                WRÓĆ
+            </a>
+
+            <article>
+                <section>
+                    <p>Autor: </p>
+                    <p>Post:</p>
+                    <input type="button" value="Komenatrze">
+                </section>
+            </article>
+        </div>
+    </body>
+        
+
+</html>
