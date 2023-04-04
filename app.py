@@ -24,12 +24,18 @@ def posty():
     searchterm = request.form['searchbox']
     for x in posts:
         if(x["title"].find(searchterm)!=-1):
+            id = x["userId"] 
+            for y in users:
+                if y["id"] == id:
+                    x["userId"] = y["name"]
+                
             postsWithPhrases.append(x)
             
                 
 
       
-    return render_template('posty.html',posts=postsWithPhrases)
+    return render_template('posty.html',posts=postsWithPhrases, users=users,comments = comments)
+   
 
 app.static_folder = 'static'
 app.add_url_rule('/static/css/<path:filename>', endpoint='css', view_func=app.send_static_file)

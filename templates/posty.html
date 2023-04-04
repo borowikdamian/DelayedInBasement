@@ -16,14 +16,22 @@
                 WRÓĆ
             </a>
             <article>
+                
                 {% for x in posts %}
                 <section>
-                    <p>userId:{{x["userId"]}} </p>
-                    <p>Tytuł:{{x["title"]}}</p>
-                    <p>Post:{{x["body"]}}</p>
-                    <hr>
+                    <p>User:{{x["userId"]}} </p>
+                    <p>Title:{{x["title"]}}</p>
+                    <p>Text:{{x["body"]}}</p>
+                    <p>Comments:
+                        {%for y in comments
+                            if x["id"] == y["postId"]:%}
+                            <p>Name:{{y["name"]}} </p>
+                            <p>email:{{y["email"]}}</p>
+                            <p>body:{{y["body"]}}</p>
+                        {% endfor %}
 
-                    <input type="button" value="Komenatrze">
+                    </p>
+
                 </section>
                 {% endfor %}
             </article>
