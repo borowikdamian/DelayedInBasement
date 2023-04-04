@@ -13,7 +13,7 @@
     <body>
         <div id="body">
             <a href="{{ url_for('index') }}" method="POST">
-                WRÓĆ
+                <img src="{{ url_for('static', filename='powrot.png') }}" alt="Cofnij" width="40px" height="40px">
             </a>
             <article>
                 
@@ -25,9 +25,12 @@
                     <p>Comments:
                         {%for y in comments
                             if x["id"] == y["postId"]:%}
+                            <div id="comment">
                             <p>Name:{{y["name"]}} </p>
                             <p>email:{{y["email"]}}</p>
                             <p>body:{{y["body"]}}</p>
+                            <hr>
+                            </div>
                         {% endfor %}
 
                     </p>
