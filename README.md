@@ -5,9 +5,9 @@ technologie ktore wykorzystujemy przy projekcie to: html, css, python oraz jego 
 jak to uruchomic?
 1. zainstaluj flask
 -> pip install flask
-2. wlacz serwer flask
--> flask run
-3. ustaw aplikacje
+2. ustaw aplikacje
 -> export FLASK_APP=app.py 
+3. wlacz serwer flask
+-> flask run
 4. w przegladarce polacz sie ze strona
 -> http://127.0.0.1:5000
