@@ -15,13 +15,15 @@
             <a href="{{ url_for('index') }}" method="POST">
                 WRÓĆ
             </a>
-
             <article>
+                {% for x in posts %}
                 <section>
-                    <p>Autor: </p>
-                    <p>Post:</p>
+                    <p>userId:{{x["userId"]}} </p>
+                    <p>Tytuł:{{x["title"]}}</p>
+                    <p>Post:{{x["body"]}}</p>
                     <input type="button" value="Komenatrze">
                 </section>
+                {% endfor %}
             </article>
         </div>
     </body>

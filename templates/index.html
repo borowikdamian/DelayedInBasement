@@ -10,8 +10,8 @@
     </head>
     <body>
         <main>
-            <form action="{{ url_for('posty') }}" method="POST">
-                <input id="text" type="text">
+            <form action="/posty" method="POST">
+                <input id="text" type="text" name="searchbox">
                 <button type = "submit" id="button" for="text" >Sumbit!</button>
             </form>
             
