@@ -71,7 +71,6 @@ class TestDelayedInBasementHTML(unittest.TestCase):
         expected_text = '<p>Text:{{x["body"]}}</p>'
         self.assertIn(expected_text, self.html_template)
         print("Test sprawdzający tekst zakończony.")
-        
 
 if __name__ =='__main__':
     unittest.main(exit=False)
