@@ -1,28 +1,12 @@
 import unittest
 
+
 class TestDelayedInBasementHTML(unittest.TestCase):
 
     def setUp(self):
-        self.html_template = '''<!Doctype html>
-<html lang="pl">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="description" content="Page with posts, comments, albums and pictures." />
-        <meta name="keywords" content="posts, comments, albums, pictures" />
-        <title>DelayedInBasement</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('css', filename='css/style.css') }}">
-    </head>
-    <body>
-        <main>
-            <form action="/posty" method="POST">
-                <input id="text" type="text" name="searchbox">
-                <button type = "submit" id="button" for="text" >Sumbit!</button>
-            </form>
-            
-        </main>
-    </body>
-</html>'''
+        
+        with open('templates/index.html', 'r') as file:
+            self.html_template = file.read()
 
     def tearDown(self):
         print("Zakończono test.")

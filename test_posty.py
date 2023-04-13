@@ -3,46 +3,8 @@ import unittest
 class TestDelayedInBasementHTML(unittest.TestCase):
 
     def setUp(self):
-        self.html_template = '''<!Doctype html>
-                                <html lang="pl">
-                                    <head>
-                                        <meta charset="utf-8"/>
-                                        <meta name="description" content="Page with posts, comments, albums and pictures." />
-                                        <meta name="keywords" content="posts, comments, albums, pictures" />
-                                        <title>DelayedInBasement</title>
-                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                        <link rel="stylesheet" type="text/css" href="{{ url_for('css', filename='css/style.css') }}">
-                                    </head>
-                                    <body>
-                                        <div id="body">
-                                            <a href="{{ url_for('index') }}" method="POST">
-                                                <img src="{{ url_for('static', filename='powrot.png') }}" alt="Cofnij" width="40px" height="40px">
-                                            </a>
-                                            <article>
-                                                {% for x in posts %}
-                                                <section>
-                                                    <p>User:{{x["userId"]}} </p>
-                                                    <p>Title:{{x["title"]}}</p>
-                                                    <p>Text:{{x["body"]}}</p>
-                                                    <p>Comments:
-                                                        {%for y in comments
-                                                            if x["id"] == y["postId"]:%}
-                                                            <div id="comment">
-                                                            <p>Name:{{y["name"]}} </p>
-                                                            <p>email:{{y["email"]}}</p>
-                                                            <p>body:{{y["body"]}}</p>
-                                                            <hr>
-                                                            </div>
-                                                        {% endfor %}
-
-                                                    </p>
-
-                                                </section>
-                                                {% endfor %}
-                                            </article>
-                                        </div>
-                                    </body>
-                                </html>'''
+        with open('templates/posty.html', 'r') as file:
+            self.html_template = file.read()
 
     def tearDown(self):
         print("Zakończono test.")
