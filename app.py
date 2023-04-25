@@ -1,14 +1,14 @@
 from flask import Flask, render_template, url_for, request
+import requests
 import json
 
-with open("posts.json", "r") as f:
-    posts = json.load(f)
+posts_url = "https://jsonplaceholder.typicode.com/posts"
+users_url = "https://jsonplaceholder.typicode.com/users"
+comments_url = "https://jsonplaceholder.typicode.com/comments"
 
-with open("comments.json", "r") as f:
-    comments = json.load(f)
-
-with open("users.json", "r") as f:
-    users = json.load(f)
+posts = requests.get(posts_url).json()
+users = requests.get(users_url).json()
+comments = requests.get(comments_url).json()
 
 app = Flask(__name__)
 
