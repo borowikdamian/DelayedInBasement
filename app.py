@@ -7,9 +7,7 @@ posts_url = "https://jsonplaceholder.typicode.com/posts"
 users_url = "https://jsonplaceholder.typicode.com/users"
 comments_url = "https://jsonplaceholder.typicode.com/comments"
 
-posts = requests.get(posts_url).json()
-users = requests.get(users_url).json()
-comments = requests.get(comments_url).json()
+
 
 app = Flask(__name__)
 
@@ -21,6 +19,9 @@ def index():
 
 @app.route('/posty', methods=['POST'])
 def posty():
+    posts = requests.get(posts_url).json()
+    users = requests.get(users_url).json()
+    comments = requests.get(comments_url).json()
     postsWithPhrases=[];
     searchterm = request.form['searchbox']
     for x in posts:
