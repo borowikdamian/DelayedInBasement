@@ -2,8 +2,6 @@ from flask import Flask, render_template, url_for, request
 import requests
 import json
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
 
 posts_url = "https://jsonplaceholder.typicode.com/posts"
 users_url = "https://jsonplaceholder.typicode.com/users"
